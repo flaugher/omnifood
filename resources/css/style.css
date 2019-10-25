@@ -1,0 +1,257 @@
+
+/* ----------------------------------------------------------------- */
+/* Light orange color: #f39c12 */
+/* Dark orange color: #cf6d17 */
+/* ----------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------- */
+/* Basic setup */
+/* ----------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;                            /* All other font sizes will be relative to this one */
+    font-weight: 300;                           /* Pick one of the Lato weights you downloaded */
+    text-rendering: optimizeLegibility;
+}
+
+/* ----------------------------------------------------------------- */
+/* Resusable components */
+/* ----------------------------------------------------------------- */
+/* --- Rows --- */
+.row {
+    max-width: 1140px;              /* This is the only rule that will have an absolute pixel value */
+    margin: 0 auto;                 /* Center all rows */
+}
+
+/* --- Sections --- */
+/* He uses padding instead of margins so he can preserve any assigned background colors as the padding space will be inside any box with a background color.  If he used margins, this wouldn't happen. */
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+/* --- Headings --- */
+h1,
+h2,
+h3 {                                            /* Common heading elements */
+    font-weight: 300;                           /* Good to decrease weight if you increase the size */
+    text-transform: uppercase;                  /* Make headline uppercase */
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;                        /* Add space between header and buttons */
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;                          /* Add space between words */
+    letter-spacing: 1px;                        /* Add slight space between letters */
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after {                                      /* This appears after each h2 */
+    display: block;
+    height: 2px;
+    background-color: #f39c12;
+    content: " ";                               /* after always requires some content */
+    width: 100px;
+    margin: 0 auto;                             /* Center the line */
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+/* --- Paragraphs --- */
+.long-copy {
+    line-height: 120%;                          /* Should always be between 120% and 145% */
+    width: 70%;                                 /* Shouldn't be full width of the page */
+    margin-left: 15%;                           /* Width is 100%, content is 70%. Each margin is 15%. */
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/* --- Icons --- */
+.icon-big {
+    font-size: 350%;                            /* Our icons are fonts so we can increase their size */
+    display: block;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+/* --- Buttons --- */
+/* Buttons have four states: link (normal), visited (after it's been clicked), hover (when we hover over button
+with our mouse), and active (when button is actually being clicked). */
+.btn:link,
+.btn:visited {                                  /* All buttons share these common style values */
+    display: inline-block;                      /* Use inline-block for buttons. It allows you to set a height
+                                                   and width for the button. It doesn't add a line break after
+                                                   the button. It's good for lining up elements horizontally. */
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;                      /* Remove underline from anchor link */
+    border-radius: 50px;                        /* Round button edges */
+    /* Create a nice CSS3 effect: make background color change with a transition */
+    transition: background-color 0.2s, border 0.2s, color 0.2s;         
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #f39c12;
+    border: 1px solid #f39c12;                /* Must add border to both buttons to make them same height */
+    color: #fff;                              /* Default to white text */
+    margin-right: 15px;                         /* Add margin between buttons */
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #f39c12;
+    color: #f39c12;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #cf6d17;                /* Note we're changing background color */
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}
+
+/* ----------------------------------------------------------------- */
+/* Header */
+/* ----------------------------------------------------------------- */
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url(img/hero.jpg);
+                                                /* Path is relative to this CSS file */
+                                                /* Add gradient so text is readable */
+
+    background-size: cover;                     /* Zooms out so entire image is seen in viewport */
+    background-position: center;                /* Center the image */
+    height: 100vh;                              /* Image fills 100% of viewport (screen) */
+}
+
+.hero-text-box {
+    position: absolute;                         /* In this responsive design, box should be positioned absolutely */
+    width: 1140px;                              /* Box has same width as page (row) shown above */
+    top: 50%;                                   /* Position box 50% from the top and left */
+    left: 50%;
+    transform: translate(-50%, -50%);           /* Translate half of elements width and height to the left */
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;                                /* Ensure logo on left side */
+    margin-top: 20px;
+}
+
+.main-nav {
+    float: right;                               /* Push navigation links to right side */
+    list-style: none;                           /* Get rid of list bullet points */
+    margin-top: 55px;
+}
+
+.main-nav li {
+    display: inline-block;                      /* Line links up side by side */
+    margin-left: 40px;                          /* Give each link a margin */
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    padding: 8px;
+    border-bottom: 2px solid transparent;       /* There has to be a border to appear when we hover over the link
+                                                   so we create one in the default state but make it transparent */
+    transition: border-bottom 2s;               /* Create nice CSS3 transition */
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #f39c12;          /* Display bottom border in hover state */
+}
+
+/* ----------------------------------------------------------------- */
+/* Features */
+/* ----------------------------------------------------------------- */
+.section-features .long-copy {
+    margin-bottom: 30px;                        /* Add margin between "Hello" paragraph and the features columns
+                                                   below it.  Note that we use .section-features so that we don't
+                                                   add a margin between all long-copy blocks, just this one. */
+}
+
+/* ----------------------------------------------------------------- */
+/* Meals */
+/* ----------------------------------------------------------------- */
+.section-meals {
+    padding: 0;                                 /* Remove large gap between this section and features section */
+}
+.meals-showcase {
+    list-style: none;
+    width: 100%;                                /* Make showcase width of viewport */
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo {
+    width: 100%;                                /* Each meal photo should have 100% of the width of its parent */
+    margin: 0;                                  /* Override margin set by normalize.css */
+    overflow: hidden;                           /* Ensures that when we scale out the photos, this doesn't "push" 
+                                                   the meal-photo container to be bigger which causes the photo
+                                                   section to expand beyond the width of the screen and forces
+                                                   the viewer to need to scroll horizontally. */
+    background-color: #000;                   /* This helps make the opaque images darker */
+}
+
+.meal-photo img {
+    width: 100%;                                /* Ensure image is same width as its parent container */
+    height: auto;
+    opacity: 0.7;                               /* Put a "screen" look over the images to start */
+    transform: scale(1.15);                     /* Make images 115% larger to create initial zoomed in effect */
+    transition: transform 0.5s, opacity 0.5s;   /* This makes the hover effect look smoother */
+                                                /* Note that transform values refer to the transform and opacity   
+                                                   properties in the associated img:hover.  It's saying, "Make 
+                                                   the scale effect take 0.5 seconds." Likewise with the 
+                                                   opacity. */
+}
+
+.meal-photo img:hover {                         /* Create special zoom-in effect when hovering over image */
+    transform: scale(1.03);                     /* Scale it to slightly more than one so white line doesn't appear */
+    opacity: 1;                                 /* Remove the "screen" when you hover over the images */
+}
