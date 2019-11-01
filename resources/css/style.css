@@ -112,6 +112,37 @@ h3 {
     margin-bottom: 10px;
 }
 
+.icon-small {
+    display: inline-block;                      /* Make inline-block so we can assign them a width */
+    width: 30px;
+    text-align: center;                         /* Center them vertically */
+    color: #f39c12;
+    font-size: 120%;                            /* Since these are font icons, we can increase their size */
+    margin-right: 10px;                         /* Add a little extra margin to the right */
+    /* Setting line-height + vertical-align + a negative top margin allows you to align the icon
+       with its descriptive text.  Setting the margin negative "pulls" it up so we can fine tune the
+       alignment */
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+/* --- Links --- */
+a:link,
+a:visited {
+    color: #f39c12;
+    text-decoration: none;                      /* Replace default underline with a nicer one */
+    padding-bottom: 1px;
+    border-bottom: 1px solid #f39c12;
+    transition: border-bottom 0.2s, color 0.2s; /* Again, these refer to hover/active values below */
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
 /* --- Buttons --- */
 /* Buttons have four states: link (normal), visited (after it's been clicked), hover (when we hover over button
 with our mouse), and active (when button is actually being clicked). */
@@ -311,8 +342,26 @@ header {
     margin-right: 25px;
 }
 
+.btn-app:link,
+.btn-app:visited {
+    border: 0;                                  /* Prevent underline that default links are subject to */
+}
+
 .btn-app img {
     height: 50px;                               /* Make both buttons 50 px tall */
     width: auto;                                /* Then scale the width accordingly */
     margin-right: 10px;                         /* Add spacing between them */
+}
+
+/* ----------------------------------------------------------------- */
+/* Cities */
+/* ----------------------------------------------------------------- */
+.box img {
+    width: 100%;                                /* Make image the size of the box enclosing it */
+    height: auto;
+    margin-bottom: 15px;                        /* Add margin between images and headers below them */
+}
+
+.city-feature {
+    margin-bottom: 5px;                         /* Add margin between city features */
 }
