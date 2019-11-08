@@ -5,3 +5,7 @@ PHP.
 
 This website uses the grid system described at www.responsivegridsystem.com.
 
+Run browsersync:
+
+    cd (this directory)
+    browser-sync start --server --files "*.html, *.css, css/*.css, js/*.js, resources/**, vendors/**"
