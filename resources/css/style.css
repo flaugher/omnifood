@@ -199,6 +199,8 @@ header {
 
     background-size: cover;                     /* Zooms out so entire image is seen in viewport */
     background-position: center;                /* Center the image */
+    /* I'm commenting this out because it seems to negate the background-size: cover attribute */
+    /* background-attachment: fixed; */         /* Special effect: keep image in same place even as you scroll */
     height: 100vh;                              /* Image fills 100% of viewport (screen) */
 }
 
@@ -364,4 +366,45 @@ header {
 
 .city-feature {
     margin-bottom: 5px;                         /* Add margin between city features */
+}
+
+/* ----------------------------------------------------------------- */
+/* Testimonials */
+/* ----------------------------------------------------------------- */
+.section-testimonials {
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers.jpg);
+    background-size: cover;                     /* Entire image should fill the section */
+    color: #fff;
+    /* I'm commenting this out because it seems to negate the background-size: cover attribute */
+    /* background-attachment: fixed; */         /* Special effect: keep image in same place even as you scroll */
+}
+
+blockquote {
+    padding: 2%;                                /* Has effect of constraining quote to a smaller block */
+    font-style: italic;                         /* Assumes I included italic style in my chosen Google Font */
+    line-height: 145%;                          /* Always set line height for paragraphs */
+    position: relative;                         /* We must set this relative in order to set absolute position for left double quote below */
+    margin-top: 40px;
+}
+
+blockquote:before {
+    content: "\201C";                           /* Put HTML special character for left double quote before the block quote */
+    font-size: 500%;                            /* Got character here: https://css-tricks.com/snippets/html/glyphs/ */
+    display: block;                             /* Put double quote in it's own block */
+    position: absolute;                         /* Position character absolutely to we can specify x,y coordinates next */
+    top: -5px;                                  /* For this to work, we must set position: relative in parent container above */
+    left: -5px0;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;                             /* This separates the citation from the block quote */
+}
+
+cite img {
+    height: 45px;                               /* Make image smaller */
+    border-radius: 50%;                         /* Make image round */
+    margin-right: 10px;                         /* Add a little space between the image and citation */
+    vertical-align: middle;                     /* Align the image with the citation */
 }
