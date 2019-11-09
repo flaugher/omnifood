@@ -5,6 +5,8 @@ PHP.
 
 This website uses the grid system described at www.responsivegridsystem.com.
 
+This is the [finished site](http://www.webdesigncourse.co/omnifood/index.php).
+
 Run browsersync:
 
     cd (this directory)
