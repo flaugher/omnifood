@@ -408,3 +408,59 @@ cite img {
     margin-right: 10px;                         /* Add a little space between the image and citation */
     vertical-align: middle;                     /* Align the image with the citation */
 }
+
+/* ----------------------------------------------------------------- */
+/* Plans */
+/* ----------------------------------------------------------------- */
+.section-plans {
+    background-color: #f4f4f4;                /* Add a subtle background color */
+}
+
+/* He put a plan-box div inside the parent col div so he could make it less wide and give it a different background color */
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;                                 /* Make it a little less wide than the parent */
+    margin-left: 5%;                            /* And center it: 100% = 90% + (2 x 5%) */
+    box-shadow: 0 2px 2px #cfcfcf;            /* Add box shadow to entire box */
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 1px solid rgba(238, 236, 236);
+}
+
+.plan-box div:first-child {                      /* This refers to the first div inside the plan-box div that contains the price */
+    background-color: #fcfcfc;                 /* Add subtle background color to first box */
+    border-top-left-radius: 5px;                 /* Add border box shadow */
+    border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {                      /* This refers to the last div inside the plan-box div that contains the buttons */
+    text-align: center;                         /* Center the buttons */
+    border: 0;                                  /* Remove gray underline from last box */
+}
+
+.plan-box ul {
+    list-style: none;                           /* Remove bullets */
+}
+
+.plan-box ul li {
+    padding: 5px 0;
+}
+
+.plan-price {
+    font-size: 250%;
+    margin-bottom: 10px;
+    font-weight: 100;                           /* Depends on Google fonts you installed */
+    color: #cf6d17;
+}
+
+.plan-price span {
+    font-size: 35%;                             /* This will be 30% of the 300% of the parent element */
+    font-weight: 300;                           /* Must be explicit to override 100 weight of parent element */
+}
+
+.plan-price-meal {
+    font-size: 80%;
+}
