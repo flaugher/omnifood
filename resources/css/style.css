@@ -377,6 +377,7 @@ header {
     color: #fff;
     /* I'm commenting this out because it seems to negate the background-size: cover attribute */
     /* background-attachment: fixed; */         /* Special effect: keep image in same place even as you scroll */
+    background-attachment: fixed;
 }
 
 blockquote {
@@ -393,7 +394,7 @@ blockquote:before {
     display: block;                             /* Put double quote in it's own block */
     position: absolute;                         /* Position character absolutely to we can specify x,y coordinates next */
     top: -5px;                                  /* For this to work, we must set position: relative in parent container above */
-    left: -5px0;
+    left: -5px;
 }
 
 cite {
