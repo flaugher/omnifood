@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;                              /* This prevents there from being a blue outline */
+}                                               /* when you click any of the message form input elements */
+
 html {
     background-color: #fff;
     color: #555;
@@ -146,8 +150,9 @@ a:active {
 /* --- Buttons --- */
 /* Buttons have four states: link (normal), visited (after it's been clicked), hover (when we hover over button
 with our mouse), and active (when button is actually being clicked). */
-.btn:link,
-.btn:visited {                                  /* All buttons share these common style values */
+.btn:link,                                      /* All buttons share these common style values */
+.btn:visited,
+input[type=submit] {                            /* Apply style to submit button on message form too */
     display: inline-block;                      /* Use inline-block for buttons. It allows you to set a height
                                                    and width for the button. It doesn't add a line break after
                                                    the button. It's good for lining up elements horizontally. */
@@ -156,11 +161,12 @@ with our mouse), and active (when button is actually being clicked). */
     text-decoration: none;                      /* Remove underline from anchor link */
     border-radius: 50px;                        /* Round button edges */
     /* Create a nice CSS3 effect: make background color change with a transition */
-    transition: background-color 0.2s, border 0.2s, color 0.2s;         
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
 .btn-full:link,
-.btn-full:visited {
+.btn-full:visited,
+input[type=submit] {
     background-color: #f39c12;
     border: 1px solid #f39c12;                /* Must add border to both buttons to make them same height */
     color: #fff;                              /* Default to white text */
@@ -174,12 +180,15 @@ with our mouse), and active (when button is actually being clicked). */
 }
 
 .btn:hover,
-.btn:active {
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
     background-color: #cf6d17;                /* Note we're changing background color */
 }
 
 .btn-full:hover,
-.btn-full:active {
+.btn-full:active,
+input[type=submit] {
     border: 1px solid #cf6d17;
 }
 
@@ -276,7 +285,7 @@ header {
 .meal-photo {
     width: 100%;                                /* Each meal photo should have 100% of the width of its parent */
     margin: 0;                                  /* Override margin set by normalize.css */
-    overflow: hidden;                           /* Ensures that when we scale out the photos, this doesn't "push" 
+    overflow: hidden;                           /* Ensures that when we scale out the photos, this doesn't "push"
                                                    the meal-photo container to be bigger which causes the photo
                                                    section to expand beyond the width of the screen and forces
                                                    the viewer to need to scroll horizontally. */
@@ -289,9 +298,9 @@ header {
     opacity: 0.7;                               /* Put a "screen" look over the images to start */
     transform: scale(1.15);                     /* Make images 115% larger to create initial zoomed in effect */
     transition: transform 0.5s, opacity 0.5s;   /* This makes the hover effect look smoother */
-                                                /* Note that transform values refer to the transform and opacity   
-                                                   properties in the associated img:hover.  It's saying, "Make 
-                                                   the scale effect take 0.5 seconds." Likewise with the 
+                                                /* Note that transform values refer to the transform and opacity
+                                                   properties in the associated img:hover.  It's saying, "Make
+                                                   the scale effect take 0.5 seconds." Likewise with the
                                                    opacity. */
 }
 
@@ -464,4 +473,33 @@ cite img {
 
 .plan-price-meal {
     font-size: 80%;
+}
+
+/* ----------------------------------------------------------------- */
+/* Contact form */
+/* ----------------------------------------------------------------- */
+.contact-form {
+    width: 60%;                                 /* Reduce space between labels and form fields */
+    margin: 0 auto;                             /* Center form inside its parent element. */
+}
+
+/* The net effect of the next two input selectors is to 1) prevent the checkbox from taking up the entire
+   width of the column, and thus pushing "Yes please!" below it; and 2) preventing the "Send it!" button
+   from being as wide as the column it's in. */
+input[type=text],                               /* Select all input elements of type text */
+input[type=email],                              /* Select all input elements of type email */
+select,
+textarea {
+    width: 100%;                                /* Fields fill width of entire column */
+    padding: 7px;
+    border-radius: 3px;                         /* Give fields slightly rounded corners */
+    border: 1px solid #ccc;                   /* This fixes the appearance of the form element borders */
+}
+
+.contact-form textarea {
+    height: 100px;                              /* Limit height of textarea element */
+}
+
+.contact-form input[type=checkbox] {
+    margin: 10px 5px 10px 0;                    /* Add space around checkbox (except on left side) */
 }
