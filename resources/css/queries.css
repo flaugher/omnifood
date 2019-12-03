@@ -1,4 +1,7 @@
-/* Big tablets and iPads in landscape mode: 768px to 1023px. */
+/* When Jonas added these styles, he would take each block and view the page at the lowest width for that block.
+   For example, for the 1200px block, he would look at it at 1024px.  He would look at the 1023px block at 768px. */
+
+/* Big tablets and iPads in landscape mode: 1024 to 1200. */
 @media only screen and (max-width: 1200px) {
     .hero-text-box {
         position: absolute;                         /* In this responsive design, box should be positioned absolutely */
@@ -17,14 +20,73 @@
         width: 80%;                                 /* Increase width */
         margin-left: 10%;                           /* Increasing width requires decreasing margin-left */
     }
+    .steps-box { margin-top: 10px; }
+    .steps-box:last-child { margin-top: 10px; }
+    .work-steps { margin-bottom: 40px; }
+    .works-step:last-of-type { margin-bottom: 60px; }
+
+    .app-screen { width: 50%; }
+    .icon-small {
+        width: 20p;
+        margin-right: 5px;
+    }
+    .city-feature { font-size: 90%;}
+    .plan-box {
+        width: 100%;
+        margin-left: 0%;
+    }
+    .plan-price {
+        font-size: 250%;
+    }
+    .contact-form {
+        width: 80%;
+    }
 }
 
 /* Larger phones to small tablets: from 481px to 767px. */
 @media only screen and (max-width: 767px) {
+    body { font-size: 16px; }                       /* Reduce */
+    section { padding: 30px 0; }                    /* Reduce */
+
+    .row,
+    .hero-text-box { padding: 0 4%; }               /* Reduce */
+    .col {
+        width: 100%;                                /* Stack columns instead of positioning them side-by-side */
+        margin: 0 0 4% 0;                           /* Override .col rule in grid.css */
+    }
+
+    .main-nav { display: none; }                    /* Hide for now and fix later */
+
+    h1 { font-size: 188%; }
+    h2 { font-size: 150%; }
+
+    .long-copy {                                    /* This can be wider now */
+        width: 100%;                                /* Increase width */
+        margin-left: 0%;                            /* Decrease margins */
+    }
+
+    .work-step { margin-bottom: 20px; }
+    .works-step:last-of-type { margin-bottom: 20px; }
+
+    .works-step div {
+        height: 40px;
+        width: 40px;
+        margin-right: 15px;
+        padding: 4px;
+        font-size: 120%;
+    }
+
+    .steps-box:first-child {
+        text-align: center;                          /* Center the image */
+    }
+
+    .app-screen { width: 40%; }
+    .app-screen { width: 50%; }
 
 }
 
 /* Small phones: from 0 to 480 pixels. */
 @media only screen and (max-width: 480px) {
-
+    section { padding: 25px 0; }
+    .contact-form { width: 100%; }
 }

@@ -17,13 +17,15 @@
     outline: none;                              /* This prevents there from being a blue outline */
 }                                               /* when you click any of the message form input elements */
 
-html {
+html,
+body {
     background-color: #fff;
     color: #555;
     font-family: 'Lato', sans-serif;
     font-size: 20px;                            /* All other font sizes will be relative to this one */
     font-weight: 300;                           /* Pick one of the Lato weights you downloaded */
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;                         /* He added this during RWD phase to keep text in contacts from going beyond right edge of screen */
 }
 
 .clearfix {zoom: 1}                             /* This clearfix technique is used to clear floats */
