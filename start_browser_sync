@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Need special files args because of the way this project is structured.
+browser-sync start --server --files "*.html, *.css, css/*.css, js/*.js, resources/**, vendors/**"
