@@ -223,7 +223,8 @@ header {
     transform: translate(-50%, -50%);           /* Translate half of elements width and height to the left */
 }
 
-.logo {
+.logo,
+.logo-black {
     height: 100px;
     width: auto;
     float: left;                                /* Ensure logo on left side */
@@ -231,7 +232,7 @@ header {
 }
 
 .logo-black {
-    display: none;                              /* The black logo isn't visible in the normal state */
+    display: none;                              /* Initially, it's invisible */
     height: 50px;
     width: auto;
     float: left;                                /* Ensure logo on left side */
@@ -252,48 +253,41 @@ header {
 
 .main-nav li a:link,
 .main-nav li a:visited {
-    padding: 8px 0;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 90%;
+    padding: 8px;
     border-bottom: 2px solid transparent;       /* There has to be a border to appear when we hover over the link
                                                    so we create one in the default state but make it transparent */
-    -webkit-transition: border-bottom 0.2s;
-    transition: border-bottom 0.2s;               /* Create nice CSS3 transition */
+    transition: border-bottom 2s;               /* Create nice CSS3 transition */
 }
 
 .main-nav li a:hover,
 .main-nav li a:active {
-    border-bottom: 2px solid #e67e22;          /* Display bottom border in hover state */
+    border-bottom: 2px solid #f39c12;          /* Display bottom border in hover state */
 }
 
 /* Sticky navigation */
 .sticky {
-    position: fixed;                            /* Position must be fixed for sticky navigation */
-    top: 0;
+    position: fixed;                            /* Navigation stays in same position irregardless of scrolling */
+    top: 0;                                     /* Put nav in top left corner */
     left: 0;
-    width: 100%;                                /* Should be as wide as the viewport */
-    background-color: rgba(255,255,255,0.98); /* Change color so it stands out */
+    width: 100%;                                /* Should take up entire width of browser */
+    background-color: rgba(255,255,255,.98);
     box-shadow: 0 2px 2px #efefef;
-    z-index: 9999;
 }
 
-.sticky .main-nav { margin-top: 18px; }
+.sticky .main-nav { margin-top: 15px; }
 
 .sticky .main-nav li a:link,
 .sticky .main-nav li a:visited {
-    padding: 16px 0;
+    padding: 15px 0;
     color: #555;
 }
 
-.sticky .logo {
-    display: none;                             /* When sticky navigation in effect, hide white logo */
-}
-
-.sticky .logo-black {
-    display: block;                             /* When sticky navigation in effect, display black logo */
-}
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block; }         /* Display logo when inside a sticky element */
 
 /* ----------------------------------------------------------------- */
 /* Features */
