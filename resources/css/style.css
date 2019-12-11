@@ -276,7 +276,7 @@ header {
     width: 100%;                                /* Should be as wide as the viewport */
     background-color: rgba(255,255,255,0.98); /* Change color so it stands out */
     box-shadow: 0 2px 2px #efefef;
-    z-index: 9999;
+    z-index: 9999;                              /* Ensure that sticky navigation always displays on top of all other elements */
 }
 
 .sticky .main-nav { margin-top: 18px; }
